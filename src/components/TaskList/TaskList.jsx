@@ -313,7 +313,7 @@ const TaskList = () => {
   return (
     <div className="task-list">
       <h1 className="task-list-heading">Task List</h1>
-        <div className="filters-container">
+        {filteredTasks.length !==0 && <div className="filters-container">
           <input
             type="text"
             placeholder="Search by task name..."
@@ -343,7 +343,7 @@ const TaskList = () => {
             <option value="pending">Pending</option>
           </select>
           <button onClick={resetFilters} className="reset-button">Reset Filters</button>
-        </div>
+        </div>}
       <div className="task-list-container">
         {filteredTasks.length === 0 ? (
           <div className="no-task-found">
